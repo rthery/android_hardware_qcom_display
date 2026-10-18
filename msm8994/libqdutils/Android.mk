@@ -3,9 +3,9 @@ include $(LOCAL_PATH)/../common.mk
 include $(CLEAR_VARS)
 
 # b/24171136 many files not compiling with clang/llvm yet
-LOCAL_CLANG := false
 
 LOCAL_MODULE                  := libqdutils
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_LICENSE_KINDS           := SPDX-license-identifier-BSD
 LOCAL_LICENSE_CONDITIONS      := notice
 LOCAL_MODULE_TAGS             := optional
@@ -25,7 +25,6 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 
 # b/24171136 many files not compiling with clang/llvm yet
-LOCAL_CLANG := false
 
 LOCAL_COPY_HEADERS_TO           := $(common_header_export_path)
 LOCAL_COPY_HEADERS              := qdMetaData.h
@@ -37,6 +36,7 @@ LOCAL_CFLAGS                    := $(common_flags)
 LOCAL_CFLAGS                    += -DLOG_TAG=\"DisplayMetaData\"
 LOCAL_MODULE_TAGS               := optional
 LOCAL_MODULE                    := libqdMetaData
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_LICENSE_KINDS             := SPDX-license-identifier-BSD
 LOCAL_LICENSE_CONDITIONS        := notice
 include $(BUILD_SHARED_LIBRARY)

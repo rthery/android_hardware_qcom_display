@@ -18,7 +18,6 @@ include $(LOCAL_PATH)/../common.mk
 include $(CLEAR_VARS)
 
 # b/24171136 many files not compiling with clang/llvm yet
-LOCAL_CLANG := false
 
 LOCAL_MODULE                  := gralloc.$(TARGET_BOARD_PLATFORM)
 LOCAL_LICENSE_KINDS           := SPDX-license-identifier-Apache-2.0 SPDX-license-identifier-BSD
@@ -49,9 +48,9 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 
 # b/24171136 many files not compiling with clang/llvm yet
-LOCAL_CLANG := false
 
 LOCAL_MODULE                  := libmemalloc
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_LICENSE_KINDS           := SPDX-license-identifier-Apache-2.0 SPDX-license-identifier-BSD
 LOCAL_LICENSE_CONDITIONS      := notice
 LOCAL_NOTICE_FILE             := $(LOCAL_PATH)/NOTICE
